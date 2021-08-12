@@ -1,0 +1,24 @@
+.container {
+  color: #777879;
+  font-size: 12px;
+  line-height: 11px;
+  padding: .5em;
+  box-sizing: border-box;
+  border-bottom: #E3E3E3 1px solid;
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.total {
+  box-sizing: border-box;
+  padding: .5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 13px;
+  color: #431C5D;
+  margin-top: 2px;
+}

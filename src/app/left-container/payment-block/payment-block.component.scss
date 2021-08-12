@@ -1,0 +1,89 @@
+.form {
+  width: 320px;
+  height: 493px;
+  margin: 10px auto 0;
+}
+
+.payment {
+    color: #5A1094;
+    line-height: 36px;
+    font-size: 26px;
+}
+
+.lock {
+  display: flex;
+  margin-bottom: 23px;
+  p {
+    line-height: 18px;
+    color: #6B6B6B;
+    box-sizing: border-box;
+    padding-top: 4px;
+  }
+}
+
+.lastDiv {
+  p {
+    font-size: 16px;
+    line-height: 18px;
+    color: #5A1094;
+    margin-bottom: 6px;
+  }
+  .cardholder {
+    width: 320px;
+    border: 1px solid #DEDCDC;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    &.ng-invalid.ng-touched {
+      box-shadow: inset 0px 1px red, inset 1px 0px red, inset -1px 0px red, inset 0px -1px red;
+    }
+    &.ng-valid.ng-touched {
+      box-shadow: inset 0px 1px green, inset 1px 0px green, inset -1px 0px green, inset 0px -1px green;
+    }
+    &::placeholder {
+      color: #6B6B6B;
+    }
+    &:focus-visible {
+      border: 2px solid #DEDCDC;
+    }
+    .cardNumber {
+      margin-top: 20px;
+    }
+  }
+}
+.second {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.data {
+  width: 95px!important;
+}
+.flex {
+  display: flex;
+  .cardNumber {
+    margin-right: 30px;
+  }
+}
+button {
+  background: #5A1094;
+  margin-top: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 19px;
+  color: white;
+  width: 180px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid rgba(67, 28, 93, 0.8);
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+

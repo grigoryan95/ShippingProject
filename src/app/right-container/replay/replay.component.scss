@@ -1,0 +1,45 @@
+.containerItem {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E3E3E3;
+  padding: .5em;
+  img {
+    width: 45px;
+    height: 45px;
+  }
+  .price {
+    color: #777879;
+    font-size: 12px;
+    line-height: 11px;
+    //margin-bottom: 25px;
+    position: relative;
+    top: -15px;
+  }
+
+  .infoBlock {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    .level1, {
+      color: #777879;
+      font-size: 12px;
+      line-height: 11px;
+    }
+
+    .level2, .level3 {
+      color: #2B2525;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}
+.level2 {
+  margin-top: 7px;
+}
+.level3 {
+  border-bottom: 1px solid #E3E3E3;
+}

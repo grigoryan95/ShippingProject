@@ -1,0 +1,58 @@
+.container {
+  width: 1024px;
+  height: 50px;
+  background: #FFFFFF;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient( 270deg, #7e00e87a 0%, #ff187670 54.17%, #bb0cb273)  30;
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.leftSpan {
+  margin-left: 10px;
+  font-size: 17px;
+  color: #904dc5f7;
+  position: absolute;
+  top: 15px;
+  left: 180px;
+  font-weight: 300;
+}
+
+.leftImg {
+  position: absolute;
+  left: 155px;
+  top: 13px;
+}
+
+.rightSpan {
+  position: absolute;
+  float: right;
+  right: 205px;
+  top: 15px;
+  color: #c738c0;
+}
+
+.rightImgShape {
+  position: absolute;
+  top: 15px;
+  right: 180px;
+}
+.rightNumberPicture {
+  position: absolute;
+  top: 8px;
+  float: right;
+  right: 173px;
+}
+
+.spanNum3 {
+  font-weight: 200;
+  position: absolute;
+  float: right;
+  top: 5.5px;
+  right: 179px;
+  font-size: 8px;
+  color: white;
+}

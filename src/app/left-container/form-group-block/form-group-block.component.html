@@ -1,0 +1,115 @@
+<form class="forms" [formGroup]="form" (ngSubmit)="submit()">
+  <p>Shipping Info</p>
+
+  <div class="recipient">
+    <p>Recipient</p>
+    <div
+      class="validators"
+      *ngIf="form?.get('fullName')?.invalid && form?.get('fullName')?.touched"
+    >
+      <small>
+        {{'full name the field must be filled in correctly' | titlecase}}
+      </small>
+    </div>
+    <input
+      class="inputFullName"
+      placeholder="Full Name"
+      formControlName="fullName"
+    />
+
+    <div class="recipientChildDiv">
+      <input
+        class="inputFullName secondImN"
+        placeholder="Daytime Phone"
+        type="number"
+        formControlName="phoneNumber"
+      />
+
+      <p>For delivery <br> questions only</p>
+    </div>
+    <div
+      class="validators"
+      style="margin-top: -12px"
+      *ngIf="form?.get('phoneNumber')?.invalid && form?.get('phoneNumber')?.touched"
+    >
+      <small>
+        {{'Daytime Phone the field must be filled in correctly' | titlecase}}
+      </small>
+    </div>
+  </div>
+
+  <div class="address">
+    <p>Address</p>
+    <div
+      class="validators addresss"
+      *ngIf="form?.get('address')?.invalid && form?.get('address')?.touched"
+    >
+      <small>
+        {{'Street Address the field must be filled in correctly' | titlecase}}
+      </small>
+    </div>
+    <input
+      type="text"
+      class="streetAddress"
+      placeholder="Street Address"
+      formControlName="address"
+    />
+    <div
+      class="validators addresss"
+      *ngIf="form?.get('atpSuite')?.invalid && form?.get('atpSuite')?.touched"
+    >
+      <small>
+        {{'Apt, Suite, Bldg the field must be filled in correctly' | titlecase}}
+      </small>
+    </div>
+    <input
+      type="number"
+      class="atpSuite secondAtpSuite"
+      placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
+      formControlName="atpSuite"
+    />
+    <div
+      class="validators addresss"
+      *ngIf="form?.get('city')?.invalid && form?.get('city')?.touched"
+    >
+      <small>
+        {{'city the field must be filled in correctly' | titlecase}}
+      </small>
+    </div>
+    <input
+      type="text"
+      placeholder="City"
+      class="atpSuite city"
+      formControlName="city"
+    />
+    <div class="input-wrap">
+      <select placeholder="Country" class="atpSuite country">
+        <option>Russia</option>
+        <option>Armenia</option>
+        <option>Belarus</option>
+      </select>
+
+      <input
+        placeholder="Zip"
+        class="atpSuite zip"
+        type="number"
+        formControlName="zip"
+      />
+      <div
+        class="validators addresss zip"
+        *ngIf="form?.get('zip')?.invalid && form?.get('zip')?.touched"
+      >
+        <small>
+          {{'zip the field must be filled in correctly' | titlecase}}
+        </small>
+      </div>
+    </div>
+    <button
+      class="atpSuite button"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Continue
+    </button>
+  </div>
+</form>

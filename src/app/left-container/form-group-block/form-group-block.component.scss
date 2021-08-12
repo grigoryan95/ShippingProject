@@ -1,0 +1,177 @@
+.forms {
+  width: 320px;
+  height: 493px;
+  margin: 10px auto 0;
+}
+p {
+  color: #5A1094;
+  line-height: 36px;
+  font-size: 26px;
+}
+.recipient {
+  height: 114px;
+  p {
+    color: #5A1094;
+    line-height: 18px;
+    font-size: 16px;
+  }
+  .inputFullName {
+    width: 320px;
+    border: 1px solid #DEDCDC;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 40px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+      &.ng-invalid.ng-touched {
+        box-shadow: inset 0 1px red, inset 1px 0 red, inset -1px 0px red, inset 0px -1px red;
+      }
+      &.ng-valid.ng-touched {
+        box-shadow: inset 0 1px green, inset 1px 0 green, inset -1px 0px green, inset 0px -1px green;
+      }
+    &::placeholder {
+      color: #6B6B6B;
+    }
+    &:focus-visible {
+      border: 2px solid #DEDCDC;
+    }
+  }
+}
+.recipientChildDiv {
+  display: flex;
+  justify-content: center;
+  p {
+    font-size: 13px;
+    line-height: 12px;
+    color: #777879;
+    align-self: center;
+    width: 160px;
+    padding-left: 10px;
+  }
+  .secondImN {
+    width: 160px;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+//second div
+
+.address {
+  margin-top: 30px;
+  width: 320px;
+  height: 234px;
+  p {
+    font-size: 16px;
+    line-height: 18px;
+    color: #5A1094;
+  }
+  .streetAddress {
+    width: 320px;
+    border: 1px solid #DEDCDC;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 40px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    &.ng-invalid.ng-touched {
+      box-shadow: inset 0 1px red, inset 1px 0 red, inset -1px 0px red, inset 0px -1px red;
+    }
+    &.ng-valid.ng-touched {
+      box-shadow: inset 0 1px green, inset 1px 0 green, inset -1px 0px green, inset 0px -1px green;
+    }
+    &::placeholder {
+      color: #6B6B6B;
+    }
+    &:focus-visible {
+      border: 2px solid #DEDCDC;
+    }
+  }
+}
+.atpSuite {
+  width: 320px;
+  border: 1px solid #DEDCDC;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 15px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  &.ng-invalid.ng-touched {
+    box-shadow: inset 0 1px red, inset 1px 0 red, inset -1px 0px red, inset 0px -1px red;
+  }
+  &.ng-valid.ng-touched {
+    box-shadow: inset 0 1px green, inset 1px 0 green, inset -1px 0px green, inset 0px -1px green;
+  }
+  &::placeholder {
+    color: #6B6B6B;
+  }
+  &:focus-visible {
+    border: 2px solid #DEDCDC;
+  }
+
+}
+.secondAtpSuite {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.country {
+  width: 180px;
+  margin-right: 20px;
+  appearance: none;
+  background: url("../../../assets/images/Path 38.svg") no-repeat 95%;
+  padding-right: 20px;
+}
+.zip {
+  width: 120px;
+}
+.button {
+  background: #5A1094;
+  color: white;
+  width: 180px;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  border: 1px solid rgba(67, 28, 93, 0.8);
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+}
+
+.input-wrap {
+  display: flex;
+}
+.zip {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.validators {
+  color: red;
+  margin-top: -9px;
+  .addresss {
+    margin-top: -14px;
+  }
+  .zip {
+    margin-left: 6px;
+  }
+}

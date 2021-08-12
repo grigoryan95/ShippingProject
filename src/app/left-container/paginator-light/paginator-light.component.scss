@@ -1,0 +1,22 @@
+.paginatorContainer {
+  font-size: 12px;
+  line-height: 14px;
+  color: #979797;
+  display: flex;
+  align-items: center;
+  padding: 20px 0 0 40px;
+  p{
+    margin: 0;
+  }
+  img{
+    margin: 0 14px;
+  }
+}
+.lightColor {
+  color: #5A1094;
+}
+
+.underline {
+  //text-decoration: underline;
+  color: #979797;
+}
