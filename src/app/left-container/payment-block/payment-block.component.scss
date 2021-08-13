@@ -86,4 +86,13 @@ button {
     cursor: not-allowed;
   }
 }
-
+.validators {
+  color: red;
+  margin-top: -9px;
+  .addresss {
+    margin-top: -14px;
+  }
+  .zip {
+    margin-left: 6px;
+  }
+}

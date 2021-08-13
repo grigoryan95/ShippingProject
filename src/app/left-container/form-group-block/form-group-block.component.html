@@ -1,4 +1,8 @@
-<form class="forms" [formGroup]="form" (ngSubmit)="submit()">
+<form
+  class="forms"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
   <p>Shipping Info</p>
 
   <div class="recipient">
@@ -8,7 +12,7 @@
       *ngIf="form?.get('fullName')?.invalid && form?.get('fullName')?.touched"
     >
       <small>
-        {{'full name the field must be filled in correctly' | titlecase}}
+        {{'full name ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -33,7 +37,7 @@
       *ngIf="form?.get('phoneNumber')?.invalid && form?.get('phoneNumber')?.touched"
     >
       <small>
-        {{'Daytime Phone the field must be filled in correctly' | titlecase}}
+        {{'Daytime Phone ' + errorsText | titlecase}}
       </small>
     </div>
   </div>
@@ -45,7 +49,7 @@
       *ngIf="form?.get('address')?.invalid && form?.get('address')?.touched"
     >
       <small>
-        {{'Street Address the field must be filled in correctly' | titlecase}}
+        {{'Street Address ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -59,7 +63,7 @@
       *ngIf="form?.get('atpSuite')?.invalid && form?.get('atpSuite')?.touched"
     >
       <small>
-        {{'Apt, Suite, Bldg the field must be filled in correctly' | titlecase}}
+        {{'Apt, Suite, Bldg ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -73,7 +77,7 @@
       *ngIf="form?.get('city')?.invalid && form?.get('city')?.touched"
     >
       <small>
-        {{'city the field must be filled in correctly' | titlecase}}
+        {{'city the ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -100,7 +104,7 @@
         *ngIf="form?.get('zip')?.invalid && form?.get('zip')?.touched"
       >
         <small>
-          {{'zip the field must be filled in correctly' | titlecase}}
+          {{'zip ' + errorsText | titlecase}}
         </small>
       </div>
     </div>

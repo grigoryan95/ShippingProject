@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {RightContainerServiceService} from "../../services/right-container-service.service";
 
 @Component({
   selector: 'app-form-group-block',
@@ -10,8 +11,10 @@ export class FormGroupBlockComponent implements OnInit {
   @Output() emitNextPage: EventEmitter<string> = new EventEmitter<string>()
 
   form: FormGroup
+  errorsText: string = ''
 
-  constructor() {
+  constructor(text: RightContainerServiceService) {
+    this.errorsText = text.textError
     this.form = new FormGroup({
       fullName: new FormControl('', [
         Validators.required,
@@ -31,10 +34,6 @@ export class FormGroupBlockComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.emitNextPage.emit('billing')
-      console.log(1111, this.form)
-      const data = {...this.form.value}
-      console.log(data)
     }
-
   }
 }

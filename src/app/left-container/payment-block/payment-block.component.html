@@ -17,12 +17,28 @@
 
   <div class="lastDiv">
     <p>Cardholder Name</p>
+    <div
+      class="validators addresss zip"
+      *ngIf="form?.get('name')?.invalid && form?.get('name')?.touched"
+    >
+      <small>
+        {{'name ' + errorsText | titlecase}}
+      </small>
+    </div>
     <input
       class="cardholder"
       placeholder="Name as it appears on your card"
       type="text"
       formControlName="name"
     />
+    <div
+      class="validators addresss zip"
+      *ngIf="form?.get('cardNumber')?.invalid && form?.get('cardNumber')?.touched"
+    >
+      <small>
+        {{'cardNumber ' + errorsText | titlecase}}
+      </small>
+    </div>
     <p class="cardNumber">Card Number</p>
     <input
       class="cardholder second"

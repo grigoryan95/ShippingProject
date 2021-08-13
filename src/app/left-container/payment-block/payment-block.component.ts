@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {RightContainerServiceService} from "../../services/right-container-service.service";
 
 @Component({
   selector: 'app-payment-block',
@@ -7,16 +8,21 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./payment-block.component.scss']
 })
 export class PaymentBlockComponent implements OnInit {
-  @Output()emitNextPage: EventEmitter<string> = new EventEmitter<string>()
-
+  @Output() emitNextPage: EventEmitter<string> = new EventEmitter<string>()
+  errorsText: string = ''
   form: FormGroup
   name: string = ''
-  constructor() {
+
+  constructor(text: RightContainerServiceService) {
+    this.errorsText = text.textError
     this.form = new FormGroup({
-      name: new FormControl('',Validators.required),
-      cardNumber: new FormControl('',[
+      name: new FormControl('', [
         Validators.required,
-        Validators.minLength(12)
+        Validators.maxLength(15)
+      ]),
+      cardNumber: new FormControl('', [
+        Validators.required,
+        Validators.minLength(16)
       ])
     })
   }
@@ -25,14 +31,9 @@ export class PaymentBlockComponent implements OnInit {
   }
 
 
-
   submit() {
     if (this.form.valid) {
-      console.log(1111,this.form)
       this.emitNextPage.emit('Thanks')
-      const data = this.form.value
-      console.log(222,data)
     }
-
   }
 }

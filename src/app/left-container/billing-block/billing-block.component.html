@@ -8,7 +8,7 @@
       *ngIf="form?.get('fullName')?.invalid && form?.get('fullName')?.touched"
     >
       <small>
-        {{'fullName the field must be filled in correctly' | titlecase}}
+        {{'fullName ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -22,7 +22,7 @@
       *ngIf="form?.get('email')?.invalid && form?.get('email')?.touched"
     >
       <small *ngIf="form?.get('email')?.errors?.required">
-        {{'email the field must be filled in correctly' | titlecase}}
+        {{'email ' + errorsText | titlecase}}
       </small>
       <small *ngIf="form?.get('email')?.errors?.email">
         {{'enter correct email' | titlecase}}
@@ -43,7 +43,7 @@
       *ngIf="form?.get('address')?.invalid && form?.get('address')?.touched"
     >
       <small>
-        {{'address the field must be filled in correctly' | titlecase}}
+        {{'address ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -57,7 +57,7 @@
       *ngIf="form?.get('atpSuite')?.invalid && form?.get('atpSuite')?.touched"
     >
       <small>
-        {{'Apt, Suite, Bldg the field must be filled in correctly' | titlecase}}
+        {{'Apt, Suite, Bldg ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -71,7 +71,7 @@
       *ngIf="form?.get('city')?.invalid && form?.get('city')?.touched"
     >
       <small>
-        {{'city the field must be filled in correctly' | titlecase}}
+        {{'city ' + errorsText | titlecase}}
       </small>
     </div>
     <input
@@ -81,7 +81,10 @@
       formControlName="city"
     />
     <div class="input-wrap">
-      <select placeholder="Country" class="atpSuite country">
+      <select
+        placeholder="Country"
+        class="atpSuite country"
+      >
         <option>Russia</option>
         <option>Armenia</option>
         <option>Belarus</option>
@@ -98,10 +101,16 @@
         *ngIf="form?.get('zip')?.invalid && form?.get('zip')?.touched"
       >
         <small>
-          {{'zip the field must be filled in correctly' | titlecase}}
+          {{'zip ' + errorsText | titlecase}}
         </small>
       </div>
     </div>
-    <button class="atpSuite button" [disabled]="form.invalid" type="submit">Continue</button>
+    <button
+      class="atpSuite button"
+      [disabled]="form.invalid"
+      type="submit"
+    >
+      Continue
+    </button>
   </div>
 </form>
