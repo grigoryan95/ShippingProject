@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {Post, RightContainerServiceService} from "../../services/right-container-service.service";
 
 @Component({
@@ -6,13 +6,11 @@ import {Post, RightContainerServiceService} from "../../services/right-container
   templateUrl: './replay.component.html',
   styleUrls: ['./replay.component.scss']
 })
-export class ReplayComponent implements OnInit {
+export class ReplayComponent {
   posts: Post[];
-  constructor(private post:RightContainerServiceService) {
-    this.posts = post.arrObj
-  }
 
-  ngOnInit(): void {
+  constructor(private post: RightContainerServiceService) {
+    this.posts = post.arrObj
   }
 
 }

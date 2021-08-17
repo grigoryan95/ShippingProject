@@ -1,5 +1,4 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-left-container',
@@ -7,9 +6,11 @@ import {Subject} from "rxjs";
   styleUrls: ['./left-container.component.scss']
 })
 export class LeftContainerComponent implements OnInit {
-  @Output()pageOutput: EventEmitter<string> = new EventEmitter<string>()
+  @Output() pageOutput: EventEmitter<string> = new EventEmitter<string>()
   page = 'shipping';
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.pageOutput.emit(this.page)

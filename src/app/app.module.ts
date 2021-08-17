@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -24,13 +23,11 @@ import {PaginatorLightComponent} from './left-container/paginator-light/paginato
 import {FormGroupBlockComponent} from './left-container/form-group-block/form-group-block.component';
 import {MatInputModule} from "@angular/material/input";
 import {InputTextModule} from 'primeng/inputtext';
-import { BillingBlockComponent } from './left-container/billing-block/billing-block.component';
-import { PaymentBlockComponent } from './left-container/payment-block/payment-block.component';
-import { ThankOrderComponent } from './left-container/thank-order/thank-order.component';
+import {BillingBlockComponent} from './left-container/billing-block/billing-block.component';
+import {PaymentBlockComponent} from './left-container/payment-block/payment-block.component';
+import {ThankOrderComponent} from './left-container/thank-order/thank-order.component';
 
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
+
 @NgModule({
   declarations: [
     AppComponent,

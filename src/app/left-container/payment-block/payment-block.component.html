@@ -49,16 +49,41 @@
     <div class="flex">
       <div>
         <p class="cardNumber">Expire Date</p>
-        <input class="cardholder data" placeholder="MM/YY"/>
+        <input
+          class="cardholder data"
+          placeholder="MM/YY"
+          formControlName="expireDate"
+          type="text"
+        />
       </div>
       <div>
         <p>Security Code</p>
-        <input class="cardholder data"/>
+        <input
+          class="cardholder data"
+          type="text"
+          placeholder="***"
+          formControlName="securityCode"
+        />
       </div>
-
     </div>
+  </div>
+  <div
+    class="validators addresss zip"
+    *ngIf="form?.get('expireDate')?.invalid && form?.get('expireDate')?.touched"
+  >
+    <small>
+      {{'Expire date ' + errorsText | titlecase}}
+    </small>
+  </div>
+  <div
+    class="validators addresss zip"
+    *ngIf="form?.get('securityCode')?.invalid && form?.get('securityCode')?.touched"
+  >
+    <small>
+      {{'Security Code ' + errorsText | titlecase}}
+    </small>
   </div>
 
   <button type="submit" [disabled]="form.invalid">Pay Securely</button>
-
+  <button class="atpSuite button reset" (click)="reset()">Reset</button>
 </form>
