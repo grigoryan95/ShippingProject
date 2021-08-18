@@ -41,7 +41,8 @@
     </div>
     <p class="cardNumber">Card Number</p>
     <input
-      class="cardholder second"
+      (input)="changInputBack()"
+      class="cardholder second test"
       placeholder="XXXX XXXX XXXX XXXX XXXX"
       type="number"
       formControlName="cardNumber"
