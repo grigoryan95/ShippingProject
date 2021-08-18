@@ -3,11 +3,13 @@
   height: 493px;
   margin: 10px auto 0;
 }
+
 p {
   color: #5A1094;
   line-height: 36px;
   font-size: 26px;
 }
+
 .recipient {
   height: 114px;
   p {
@@ -41,6 +43,7 @@ p {
     }
   }
 }
+
 .recipientChildDiv {
   display: flex;
   justify-content: center;
@@ -52,6 +55,7 @@ p {
     width: 160px;
     padding-left: 10px;
   }
+
   .secondImN {
     width: 160px;
     &::-webkit-outer-spin-button,
@@ -61,7 +65,6 @@ p {
     }
   }
 }
-//second div
 
 .address {
   margin-top: 30px;
@@ -98,6 +101,7 @@ p {
     }
   }
 }
+
 .atpSuite {
   width: 320px;
   border: 1px solid #DEDCDC;
@@ -120,8 +124,8 @@ p {
   &:focus-visible {
     border: 2px solid #DEDCDC;
   }
-
 }
+
 .secondAtpSuite {
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -129,6 +133,7 @@ p {
     margin: 0;
   }
 }
+
 .country {
   width: 180px;
   margin-right: 20px;
@@ -136,6 +141,7 @@ p {
   background: url("../../../assets/images/Path 38.svg") no-repeat 95%;
   padding-right: 20px;
 }
+
 .zip {
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -143,6 +149,7 @@ p {
     margin: 0;
   }
 }
+
 .button {
   background: #5A1094;
   color: white;
@@ -155,9 +162,11 @@ p {
     cursor: not-allowed;
   }
 }
+
 .input-wrap {
   display: flex;
 }
+
 .validators {
   color: red;
   margin-top: -9px;
@@ -169,9 +178,11 @@ p {
     margin-left: 6px;
   }
 }
+
 #zip {
   width: 120px;
 }
+
 .reset {
   width: 100px;
   margin-left: 38px;

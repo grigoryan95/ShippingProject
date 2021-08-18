@@ -56,8 +56,8 @@ export class PaymentBlockComponent {
   }
 
   changInputBack() {
-    let masterCard = +this.form.value.cardNumber.toString().slice(0, 2)
-    const visaCard = +masterCard.toString().slice(0,1)
+    let masterCard = +this.form.value.cardNumber.toString().slice(0, 2);
+    const visaCard = +masterCard.toString().slice(0,1);
     const input =  (<HTMLElement>document.querySelector('.test'));
     if (visaCard === 4){
       input.style.backgroundImage = 'url("https://www.freeiconspng.com/thumbs/visa-icon/visa-icon-0.png")'
@@ -69,11 +69,11 @@ export class PaymentBlockComponent {
       || masterCard === 55
     ) {
       input.style.backgroundImage = 'url("https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Symbol.jpg")'
-    }else if (masterCard === 37) {
+    } else if (masterCard === 37) {
       input.style.backgroundImage = 'url("https://download.logo.wine/logo/American_Express/American_Express-Logo.wine.png")'
-    }
-    else {
+    } else {
       input.style.backgroundImage = 'none'
     }
   }
+
 }

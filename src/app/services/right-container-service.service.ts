@@ -12,7 +12,7 @@ export interface Post {
   providedIn: 'root'
 })
 export class RightContainerServiceService {
-  textError: string = 'the field must be filled in correctly'
+  textError: string = 'the field must be filled in correctly';
   arrObj: Post[] = [
     {
       img: 'assets/images/footer.png',

@@ -11,12 +11,15 @@ import {Router} from "@angular/router";
 export class FormGroupBlockComponent {
   @Output() emitNextPage: EventEmitter<string> = new EventEmitter<string>()
 
-  form: FormGroup
-  errorsText: string = ''
+  form: FormGroup;
+  errorsText: string = '';
   rout: any;
-  constructor(text: RightContainerServiceService, router: Router) {
-    this.rout = router
-    this.errorsText = text.textError
+  constructor(
+    text: RightContainerServiceService,
+    router: Router
+  ) {
+    this.rout = router;
+    this.errorsText = text.textError;
     this.form = new FormGroup({
       fullName: new FormControl('', [
         Validators.required,
@@ -39,15 +42,14 @@ export class FormGroupBlockComponent {
 
   submit() {
     if (this.form.valid) {
-      this.emitNextPage.emit('billing')
-      this.rout.navigate(['/billing'])
+      this.emitNextPage.emit('billing');
+      this.rout.navigate(['/billing']);
     }
-    this.form.reset()
+    this.form.reset();
   }
 
-
   reset() {
-    this.form.reset()
+    this.form.reset();
   }
 
 }

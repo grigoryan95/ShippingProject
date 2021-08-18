@@ -9,18 +9,18 @@ import {Router} from "@angular/router";
   styleUrls: ['./billing-block.component.scss']
 })
 export class BillingBlockComponent {
-  @Output() eventNextPage: EventEmitter<string> = new EventEmitter<string>()
+  @Output() eventNextPage: EventEmitter<string> = new EventEmitter<string>();
 
-  form: FormGroup
-  errorsText: string = ''
+  form: FormGroup;
+  errorsText: string = '';
   rout: any;
 
   constructor(
     text: RightContainerServiceService,
     router: Router
   ) {
-    this.rout = router
-    this.errorsText = text.textError
+    this.rout = router;
+    this.errorsText = text.textError;
     this.form = new FormGroup({
       fullName: new FormControl('', [
         Validators.required,
@@ -47,13 +47,13 @@ export class BillingBlockComponent {
 
   submit() {
     if (this.form.valid) {
-      this.eventNextPage.emit('payment')
-      this.rout.navigate(['/payment'])
-      this.form.reset()
+      this.eventNextPage.emit('payment');
+      this.rout.navigate(['/payment']);
+      this.form.reset();
     }
   }
 
   reset() {
-    this.form.reset()
+    this.form.reset();
   }
 }

@@ -9,9 +9,6 @@ export class LeftContainerComponent implements OnInit {
   @Output() pageOutput: EventEmitter<string> = new EventEmitter<string>()
   page = 'shipping';
 
-  constructor() {
-  }
-
   ngOnInit(): void {
     this.pageOutput.emit(this.page)
   }

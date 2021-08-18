@@ -10,7 +10,7 @@ export class ReplayComponent {
   posts: Post[];
 
   constructor(private post: RightContainerServiceService) {
-    this.posts = post.arrObj
+    this.posts = post.arrObj;
   }
 
 }
