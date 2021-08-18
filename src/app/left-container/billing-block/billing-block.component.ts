@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RightContainerServiceService} from "../../services/right-container-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-billing-block',
@@ -12,8 +13,13 @@ export class BillingBlockComponent {
 
   form: FormGroup
   errorsText: string = ''
+  rout: any;
 
-  constructor(text: RightContainerServiceService) {
+  constructor(
+    text: RightContainerServiceService,
+    router: Router
+  ) {
+    this.rout = router
     this.errorsText = text.textError
     this.form = new FormGroup({
       fullName: new FormControl('', [
@@ -42,6 +48,7 @@ export class BillingBlockComponent {
   submit() {
     if (this.form.valid) {
       this.eventNextPage.emit('payment')
+      this.rout.navigate(['/payment'])
       this.form.reset()
     }
   }

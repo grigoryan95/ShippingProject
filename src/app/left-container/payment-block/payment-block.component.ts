@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RightContainerServiceService} from "../../services/right-container-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-payment-block',
@@ -9,12 +10,16 @@ import {RightContainerServiceService} from "../../services/right-container-servi
 })
 export class PaymentBlockComponent {
   @Output() emitNextPage: EventEmitter<string> = new EventEmitter<string>()
-  errorsText: string = ''
-  form: FormGroup
-  name: string = ''
-
-  constructor(text: RightContainerServiceService) {
-    this.errorsText = text.textError
+  errorsText: string = '';
+  form: FormGroup;
+  name: string = '';
+  rout: any;
+  constructor(
+    text: RightContainerServiceService,
+    router: Router
+  ) {
+    this.rout = router;
+    this.errorsText = text.textError;
     this.form = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -41,13 +46,15 @@ export class PaymentBlockComponent {
 
   submit() {
     if (this.form.valid) {
-      this.emitNextPage.emit('Thanks')
+      this.emitNextPage.emit('Thanks');
+      this.rout.navigate(['/thanks']);
     }
   }
 
   reset() {
-    this.form.reset()
+    this.form.reset();
   }
+
   changInputBack() {
     let masterCard = +this.form.value.cardNumber.toString().slice(0, 2)
     const visaCard = +masterCard.toString().slice(0,1)
