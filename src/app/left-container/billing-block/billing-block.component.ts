@@ -1,42 +1,44 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RightContainerServiceService} from "../../services/right-container-service.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-billing-block',
   templateUrl: './billing-block.component.html',
   styleUrls: ['./billing-block.component.scss']
 })
-export class BillingBlockComponent {
+export class BillingBlockComponent implements OnInit{
   @Output() eventNextPage: EventEmitter<string> = new EventEmitter<string>();
 
   form: FormGroup;
   errorsText: string = '';
   rout: any;
+  obj: any;
 
   constructor(
-    text: RightContainerServiceService,
-    router: Router
+    private text: RightContainerServiceService,
+    private router: Router,
+    private _router:ActivatedRoute
   ) {
     this.rout = router;
     this.errorsText = text.textError;
     this.form = new FormGroup({
       fullName: new FormControl('', [
         Validators.required,
-        Validators.maxLength(20),
-        Validators.pattern('^[a-zA-Z]+$'.trim())
+        Validators.maxLength(20)
       ]),
       email: new FormControl('', [
         Validators.required,
         Validators.email,
-        Validators.pattern(/^\S*$/)
+        Validators.pattern(/^\S*$/),
+        Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$')
       ]),
       address: new FormControl('', [
         Validators.required,
         Validators.pattern(/^\S*$/)
       ]),
-      atpSuite: new FormControl('', Validators.required),
       city: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z]+$'.trim()
@@ -44,6 +46,13 @@ export class BillingBlockComponent {
       zip: new FormControl('', Validators.required)
     })
   }
+
+  ngOnInit() {
+    this._router.queryParams.subscribe(data => {
+      this.obj = data;
+    })
+  }
+
 
   submit() {
     if (this.form.valid) {
@@ -56,4 +65,12 @@ export class BillingBlockComponent {
   reset() {
     this.form.reset();
   }
+
+  addInformation() {
+    this.form.controls.fullName.setValue(this.obj.fullName);
+    this.form.controls.address.setValue(this.obj.address)
+    this.form.controls.city.setValue(this.obj.city)
+    this.form.controls.zip.setValue(+this.obj.zip)
+  }
+
 }

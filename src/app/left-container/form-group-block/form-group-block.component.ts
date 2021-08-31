@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RightContainerServiceService} from "../../services/right-container-service.service";
 import {Router} from "@angular/router";
@@ -8,30 +8,30 @@ import {Router} from "@angular/router";
   templateUrl: './form-group-block.component.html',
   styleUrls: ['./form-group-block.component.scss']
 })
-export class FormGroupBlockComponent {
-  @Output() emitNextPage: EventEmitter<string> = new EventEmitter<string>()
+export class FormGroupBlockComponent implements OnInit{
 
   form: FormGroup;
   errorsText: string = '';
   rout: any;
+  dataInfo: object | undefined;
+
+
   constructor(
-    text: RightContainerServiceService,
-    router: Router
+    private text: RightContainerServiceService,
+    private router: Router
   ) {
     this.rout = router;
     this.errorsText = text.textError;
     this.form = new FormGroup({
       fullName: new FormControl('', [
         Validators.required,
-        Validators.maxLength(20),
-        Validators.pattern('^[a-zA-Z]+$'.trim())
+        Validators.maxLength(20)
       ]),
       phoneNumber: new FormControl('', Validators.required),
       address: new FormControl('',[
         Validators.pattern(/^\S*$/),
         Validators.required
       ]),
-      atpSuite: new FormControl('', Validators.required),
       city: new FormControl('', [
         Validators.required,
         Validators.pattern('^[a-zA-Z]+$'.trim())
@@ -40,16 +40,20 @@ export class FormGroupBlockComponent {
     })
   }
 
+  ngOnInit() {
+  }
+
+
   submit() {
+    this.dataInfo =  this.form.value
     if (this.form.valid) {
-      this.emitNextPage.emit('billing');
-      this.rout.navigate(['/billing']);
+      this.rout.navigate(['/billing'],{queryParams: this.dataInfo});
     }
-    this.form.reset();
   }
 
   reset() {
     this.form.reset();
   }
+
 
 }

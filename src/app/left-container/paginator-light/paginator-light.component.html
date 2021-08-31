@@ -1,7 +1,14 @@
 <div class="paginatorContainer">
-  <p [ngClass]="[ color === 'shipping'  ? 'lightColor': 'underline']">Shipping</p>
+  <p
+    routerLink="/"
+    routerLinkActive="lightColor"
+    [routerLinkActiveOptions]="{exact: true}"
+  >
+    Shipping
+  </p>
   <img src="assets/images/Group%20Copy.png" alt="S">
-  <p [ngClass]="[ color === 'billing'  ? 'lightColor': 'underline']">Billing</p>
+  <p  routerLink="billing" routerLinkActive="lightColor">Billing</p>
   <img src="assets/images/Group%20Copy.png" alt="S">
-  <p [ngClass]="[ color === 'payment' ? 'lightColor': 'underline']">Payment</p>
+  <p  routerLink="payment" routerLinkActive="lightColor">Payment</p>
 </div>
+

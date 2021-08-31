@@ -1,5 +1,8 @@
 <form class="form" [formGroup]="form" (ngSubmit)="submit()">
-  <p>Billing Information</p>
+  <p>Billing Information
+    <small  class="sameAsShipping" (click)="addInformation()">Same as shipping</small>
+  </p>
+
 
   <div class="recipient">
     <p>Billing Contact</p>
@@ -52,19 +55,10 @@
       placeholder="Street Address"
       formControlName="address"
     />
-    <div
-      class="validators addresss zip"
-      *ngIf="form?.get('atpSuite')?.invalid && form?.get('atpSuite')?.touched"
-    >
-      <small>
-        {{'Apt, Suite, Bldg ' + errorsText | titlecase}}
-      </small>
-    </div>
     <input
       type="number"
       class="atpSuite secondAtpSuite"
       placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
-      formControlName="atpSuite"
     />
     <div
       class="validators addresss zip"

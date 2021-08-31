@@ -59,19 +59,11 @@
       placeholder="Street Address"
       formControlName="address"
     />
-    <div
-      class="validators addresss"
-      *ngIf="form?.get('atpSuite')?.invalid && form?.get('atpSuite')?.touched"
-    >
-      <small>
-        {{'Apt, Suite, Bldg ' + errorsText | titlecase}}
-      </small>
-    </div>
+
     <input
       type="number"
       class="atpSuite secondAtpSuite"
       placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
-      formControlName="atpSuite"
     />
     <div
       class="validators addresss"
@@ -119,3 +111,4 @@
     <button class="atpSuite button reset" (click)="reset()">Reset</button>
   </div>
 </form>
+

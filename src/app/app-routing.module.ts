@@ -7,7 +7,7 @@ import {ThankOrderComponent} from "./left-container/thank-order/thank-order.comp
 
 
 const routes: Routes = [
-  {path: 'shipping', component: FormGroupBlockComponent},
+  {path: '', component: FormGroupBlockComponent},
   {path: 'billing', component: BillingBlockComponent},
   {path: 'payment', component: PaymentBlockComponent},
   {path: 'thanks', component: ThankOrderComponent}

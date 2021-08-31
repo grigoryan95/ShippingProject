@@ -1,7 +1,5 @@
 <div class="leftContainer">
-  <app-paginator-light [color]="page" *ngIf="page !== 'Thanks'"></app-paginator-light>
-  <app-form-group-block (emitNextPage)="page = $event"  *ngIf="page === 'shipping'"></app-form-group-block>
-  <app-billing-block (eventNextPage)="page = $event" *ngIf="page === 'billing'"></app-billing-block>
-  <app-payment-block (emitNextPage)="page = $event" *ngIf="page === 'payment'"></app-payment-block>
+  <app-paginator-light></app-paginator-light>
+  <router-outlet></router-outlet>
   <app-thank-order  *ngIf="page === 'Thanks'"></app-thank-order>
 </div>
