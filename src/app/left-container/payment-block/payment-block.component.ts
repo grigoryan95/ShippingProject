@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RightContainerServiceService} from "../../services/right-container-service.service";
 import {Router} from "@angular/router";
@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class PaymentBlockComponent {
   @Output() emitNextPage: EventEmitter<string> = new EventEmitter<string>()
+  @ViewChild('elem') inputRef!: ElementRef
   errorsText: string = '';
   form: FormGroup;
   name: string = '';
@@ -56,11 +57,12 @@ export class PaymentBlockComponent {
   }
 
   changInputBack() {
+    const elem = this.inputRef
     let masterCard = +this.form.value.cardNumber.toString().slice(0, 2);
     const visaCard = +masterCard.toString().slice(0,1);
-    const input =  (<HTMLElement>document.querySelector('.test'));
     if (visaCard === 4){
-      input.style.backgroundImage = 'url("https://www.freeiconspng.com/thumbs/visa-icon/visa-icon-0.png")'
+      elem.nativeElement.style.backgroundImage =
+        'url("https://www.freeiconspng.com/thumbs/visa-icon/visa-icon-0.png")'
     } else if (
          masterCard === 51
       || masterCard === 52
@@ -68,11 +70,13 @@ export class PaymentBlockComponent {
       || masterCard === 54
       || masterCard === 55
     ) {
-      input.style.backgroundImage = 'url("https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Symbol.jpg")'
+      elem.nativeElement.style.backgroundImage
+        = 'url("https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Symbol.jpg")'
     } else if (masterCard === 37) {
-      input.style.backgroundImage = 'url("https://download.logo.wine/logo/American_Express/American_Express-Logo.wine.png")'
+      elem.nativeElement.style.backgroundImage =
+        'url("https://download.logo.wine/logo/American_Express/American_Express-Logo.wine.png")'
     } else {
-      input.style.backgroundImage = 'none'
+      elem.nativeElement.style.backgroundImage = 'none'
     }
   }
 
