@@ -14,7 +14,6 @@ import {LeftContainerComponent} from './left-container/left-container.component'
 import {RightContainerComponent} from './right-container/right-container.component';
 import {MainContainerComponent} from './main-container/main-container.component';
 import {OrderSummaryComponent} from './right-container/order-summary/order-summary.component';
-import {RightContainerServiceService} from "./services/right-container-service.service";
 import {ReplayComponent} from './right-container/replay/replay.component';
 import {ReplayFloorTextComponent} from './right-container/replay-floor-text/replay-floor-text.component';
 import {OnlyFloorComponent} from './right-container/only-floor/only-floor.component';
@@ -60,7 +59,7 @@ import {ThankOrderComponent} from './left-container/thank-order/thank-order.comp
     MatInputModule,
     InputTextModule
   ],
-  providers: [RightContainerServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
