@@ -25,8 +25,12 @@ import {InputTextModule} from 'primeng/inputtext';
 import {BillingBlockComponent} from './left-container/billing-block/billing-block.component';
 import {PaymentBlockComponent} from './left-container/payment-block/payment-block.component';
 import {ThankOrderComponent} from './left-container/thank-order/thank-order.component';
+import { ErrorComponent } from './left-container/error/error.component';
 
 
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +46,8 @@ import {ThankOrderComponent} from './left-container/thank-order/thank-order.comp
     FormGroupBlockComponent,
     BillingBlockComponent,
     PaymentBlockComponent,
-    ThankOrderComponent
+    ThankOrderComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -62,5 +67,6 @@ import {ThankOrderComponent} from './left-container/thank-order/thank-order.comp
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
+
+export class ApModule {
 }
