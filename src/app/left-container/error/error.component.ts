@@ -16,9 +16,13 @@ import {Router} from "@angular/router";
     margin: 50px;
   }
   button {
-    color: #fe3589;
+    background: #5A1094;
+    color: white;
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid rgba(67, 28, 93, 0.8);
     cursor: pointer;
-    font-size: 20px;
   }
     span {
       margin-left: 10px;
